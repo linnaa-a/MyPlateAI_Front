@@ -10,5 +10,8 @@ export const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+    },
+    "text": {
+        fontFamily: "Geologica",
     }
 })

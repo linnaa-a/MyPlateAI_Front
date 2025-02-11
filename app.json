@@ -11,6 +11,9 @@
     },
     "android": {
       "package": "com.anonymous.MyPlateAIFront"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

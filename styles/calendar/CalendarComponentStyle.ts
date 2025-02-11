@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/Colors';
+import { useFonts } from 'expo-font';
 
 export const styles = StyleSheet.create({
     "text-block" : {
@@ -8,7 +9,8 @@ export const styles = StyleSheet.create({
         justifyContent: "flex-start",
         flexDirection: "row", 
         marginHorizontal: "10%",
-        marginVertical: 20,
+        marginVertical: 20
+        
     },
 
     "calendar-block": {

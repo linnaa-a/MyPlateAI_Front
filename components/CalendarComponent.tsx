@@ -7,8 +7,14 @@ import {Svg, Rect, Line, Text as SvgText, Path} from 'react-native-svg';
 import colors from '../constants/Colors';
 import { useEffect, useState } from 'react';
 
-function convertDateToDay(date: Date, mode: 'short' | 'long' | 'narrow' = 'short'): string {
-    return date.toLocaleDateString("fr-FR", { weekday: mode }).replace(".", "");
+function convertDateToDay(date: Date, mode: 'short' | 'long' | 'narrow' = 'short', capitalize: boolean=false): string {
+    let datestr = date.toLocaleDateString("fr-FR", { weekday: mode }).replace(".", "");
+    
+    if (capitalize) {
+        datestr = datestr.charAt(0).toUpperCase() + datestr.slice(1);
+    }
+
+    return datestr
   }
 
 function convertDateToDayNumber(date: Date): string {
@@ -47,7 +53,7 @@ function createDateString(date: Date): {day: string, date: string} {
 }
 
 
-const DateComponent: React.FC<DateComponentProps> = ({ date, fill_percentage, onDatePress, is_today }) => {
+const DateComponent = ({ date, fill_percentage, onDatePress, is_today }: DateComponentProps) => {
 
   const width = 70;
   const height = 100;
@@ -101,11 +107,11 @@ const DateComponent: React.FC<DateComponentProps> = ({ date, fill_percentage, on
                 strokeDashoffset={perimeter - progressLength}
             />
 
-            <SvgText x="37" y="32" fontSize="22" fill={is_today ? "white" : "black"} textAnchor="middle">
-                {convertDateToDay(date)}
+            <SvgText x="37" y="32" fontSize="22" fill={is_today ? "white" : "black"} textAnchor="middle" font={globalstyle.text}>
+                {convertDateToDay(date, 'short', true)}
             </SvgText>
 
-            <SvgText x="37" y="82" fontSize="20" fill={is_today ? "white" : "black"} textAnchor="middle">
+            <SvgText x="37" y="82" fontSize="20" fill={is_today ? "white" : "black"} textAnchor="middle" font={globalstyle.text}>
                 {convertDateToDayNumber(date)}
             </SvgText>
         </Svg>
@@ -125,18 +131,17 @@ export default function CalendarComponent() {
     useEffect(() => {
         setText(createDateString(selectedDate));
     }, [selectedDate]);
-
     
 
     return (
         <View>
             <View style={calendarstyle["text-block"]}>
-                <Text style={{
+                <Text style={[globalstyle.text,{
                     textTransform: "capitalize",
                     fontSize: 15,
                     fontWeight: "bold",
-                }}>{text.day}</Text>
-                <Text>, {text.date}</Text>
+                }]}>{text.day}</Text>
+                <Text style={[globalstyle.text, {fontWeight: 100}]}>, {text.date}</Text>
             </View>
             <View style={calendarstyle["calendar-block"]}>
                 {dates.map((date, i) => (
