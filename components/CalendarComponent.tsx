@@ -4,15 +4,30 @@ import { styles as datestyle} from '../styles/calendar/DateComponent';
 import { styles as globalstyle} from '../styles/global';
 import {Svg, Rect, Line, Text as SvgText, Path} from 'react-native-svg';
 import colors from '../constants/Colors';
+import { useState } from 'react';
 
 function convertDateToDay(date: Date): string {
     return date.toLocaleDateString("fr-FR", { weekday: "short" }).replace(".", "");
   }
 
 function convertDateToDayNumber(date: Date): string {
-return date.getDate().toString();
+    return date.getDate().toString();
 }
 
+
+function getThisWeekDates(): Date[] {
+    const today = new Date();
+    const day = today.getDay();
+    const diff = today.getDate() - day + (day == 0 ? -6 : 1);
+    const monday = new Date(today.setDate(diff));
+
+    let dates = [];
+    for (let i = 0; i < 7; i++) {
+        dates.push(new Date(monday));
+        monday.setDate(monday.getDate() + 1);
+    }
+    return dates;
+}
 
 const DateComponent: React.FC<DateComponentProps> = ({ date, fill_percentage, is_today }) => {
 
@@ -45,7 +60,6 @@ const DateComponent: React.FC<DateComponentProps> = ({ date, fill_percentage, is
 
   return (
     <Svg width="50" height="90" viewBox="0 0 100 150">
-      {/* Fond avec bordure arrondie */}
       <Rect
         x="25"
         y="20"
@@ -81,15 +95,18 @@ const DateComponent: React.FC<DateComponentProps> = ({ date, fill_percentage, is
 
 
 export default function CalendarComponent() {
+    
+    const [dates, setDates] = useState<Date[]>(getThisWeekDates());
+
     return (
         <View style={globalstyle["flex-horizontal"]}>
-            {Array.from({length: 7}).map((_, i) => (
-            <DateComponent 
-                key={i}
-                date={new Date()}
-                fill_percentage={Math.random() * 120}
-                is_today={i === 0}
-            />
+            {dates.map((date, i) => (
+                <DateComponent 
+                    key={i}
+                    date={date}
+                    fill_percentage={Math.random() * 120}
+                    is_today={date.toDateString() === new Date().toDateString()}
+                />
             ))}
         </View>
     )
