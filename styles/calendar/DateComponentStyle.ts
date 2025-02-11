@@ -4,13 +4,10 @@ import colors from '../../constants/Colors';
 export const styles = StyleSheet.create({
     "calendar-block": {
         display: "flex",
-        width: "9%",
-        height: 55,
-        margin: 8,
+        flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 10,
-        paddingVertical: 5,
+        width: "90%",
+        alignSelf: "center",
     },
     "small-text": {
         fontSize: 11

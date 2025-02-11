@@ -1,11 +1,18 @@
 import {View, Text, StyleSheet} from 'react-native';
 import Colors from '../constants/Colors';
 import CalendarComponent from '../components/CalendarComponent';
+import { useState } from 'react';
 
 export default function HomeScreen() {
+
+    const [selectedDate, setSelectedDate] = useState(new Date());
+
     return (
-        <View style={styles.container}>
-            <CalendarComponent />
+        <View>
+            <CalendarComponent/>
+            <View style={styles.container}>
+
+            </View>
         </View>
     )
 }
