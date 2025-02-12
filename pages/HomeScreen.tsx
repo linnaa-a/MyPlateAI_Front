@@ -7,6 +7,9 @@ import FoodSection from '../components/FoodSection';
 
 export default function HomeScreen() {
 
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    
+
     const [nutrition, setNutrition] = useState([
         {"title": "Kcal", "value": 2000, "unit": "", "backgroundColor": Colors.orange},
         {"title": "Protéines", "value": 100, "unit": "g", "backgroundColor": Colors.red},
@@ -16,7 +19,7 @@ export default function HomeScreen() {
 
     return (
         <ScrollView style={styles.mainContainer}>
-            <CalendarComponent/>
+            <CalendarComponent onDatePress={(date) => setSelectedDate(date)} selectedDate={selectedDate}/>
             <View>
                 <NutritionOverview nutrition={nutrition}/>
             </View>

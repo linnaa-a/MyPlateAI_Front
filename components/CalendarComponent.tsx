@@ -1,5 +1,5 @@
 import {View, Text, Pressable} from 'react-native';
-import { DateComponentProps } from '../types/CalendarComponentType';
+import { DateComponentProps, CalendarComponentProps } from '../types/CalendarComponentType';
 import { styles as datestyle} from '../styles/calendar/DateComponentStyle';
 import { styles as calendarstyle} from '../styles/calendar/CalendarComponentStyle';
 import { styles as globalstyle, styles} from '../styles/global';
@@ -121,12 +121,10 @@ const DateComponent = ({ date, fill_percentage, onDatePress, is_today }: DateCom
 
 
 
-export default function CalendarComponent() {
+export default function CalendarComponent({onDatePress, selectedDate}: CalendarComponentProps) {
     
-    const [dates, setDates] = useState<Date[]>(getThisWeekDates());
-
-    const [selectedDate, setSelectedDate] = useState<Date>(new Date());
     const [text, setText] = useState(createDateString(selectedDate));
+    const [dates, setDates] = useState(getThisWeekDates());
 
     useEffect(() => {
         setText(createDateString(selectedDate));
@@ -149,7 +147,7 @@ export default function CalendarComponent() {
                         key={i}
                         date={date}
                         fill_percentage={Math.random() * 120}
-                        onDatePress={(date) => setSelectedDate(date)}
+                        onDatePress={onDatePress}
                         is_today={date.toDateString() === selectedDate.toDateString()}
                     />
                 ))}

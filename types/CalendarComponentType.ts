@@ -4,3 +4,8 @@ export type DateComponentProps = {
     onDatePress: (date: Date) => void;
     is_today: boolean;
 };
+
+export type CalendarComponentProps = {
+    onDatePress: (date: Date) => void,
+    selectedDate: Date,
+}
