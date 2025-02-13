@@ -4,6 +4,9 @@ import CalendarComponent from '../components/CalendarComponent';
 import { useState } from 'react';
 import NutritionOverview from '../components/NutritionOverview';
 import FoodSection from '../components/FoodSection';
+import LunchIllustration from "../assets/images/home/lunch-illustration.svg";
+import BreakfastIllustration from "../assets/images/home/breakfast-illustration.svg";
+import DinnerIllustration from "../assets/images/home/dinner-illustration.svg";
 
 export default function HomeScreen() {
 
@@ -24,9 +27,9 @@ export default function HomeScreen() {
                 <NutritionOverview nutrition={nutrition}/>
             </View>
             <View>
-                <FoodSection title='Petit-déjeuner' image=""></FoodSection>
-                <FoodSection title='Déjeuner' image="" left={true}></FoodSection>
-                <FoodSection title='Dîner' image=""></FoodSection>
+                <FoodSection title='Petit-déjeuner' illustration={BreakfastIllustration}></FoodSection>
+                <FoodSection title='Déjeuner' illustration={LunchIllustration} left={true}></FoodSection>
+                <FoodSection title='Dîner' illustration={DinnerIllustration}></FoodSection>
             </View>
         </ScrollView>
     )

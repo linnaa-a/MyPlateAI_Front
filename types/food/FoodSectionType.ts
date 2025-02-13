@@ -1,6 +1,8 @@
+import { SvgProps } from 'react-native-svg';
+
 export type FoodSectionProps = {
     title: string,
-    image: string,
+    illustration: React.FC<SvgProps>,
     left?: boolean
 }
 

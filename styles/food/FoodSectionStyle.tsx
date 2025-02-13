@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "column",
         backgroundColor: "white",
+        justifyContent: "center",
         width: "90%",
-        justifyContent: "flex-start",
         paddingVertical: 10,
         height: 110,
         marginVertical: 5
@@ -33,17 +33,17 @@ export const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 5,
         marginLeft: 30,
-        width: "50%"
+        width: "70%"
     },
 
     "information-container-right" : {
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        alignItems: "flex-end",
         marginTop: 10,
         marginBottom: 5,
-        marginRight: 30,
-        width: "50%",
+        marginLeft: 30,
+        width: "70%",
     },
 
     "image": {
@@ -63,5 +63,18 @@ export const styles = StyleSheet.create({
         marginHorizontal: 20,
         alignItems: "center",
         height: 20
+    },
+
+    "add-button": {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: colors.darkgreen,
+        borderRadius: 10,
+        width: 90,
+        height: 20,
+        marginTop: 10,
+
     }
 })
