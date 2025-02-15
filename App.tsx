@@ -3,6 +3,8 @@ import { StyleSheet, ActivityIndicator } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as Font from 'expo-font';
+import LoginScreen from "./pages/LoginScreen";
+import RegisterScreen from "./pages/RegisterScreen";
 import HomeScreen from "./pages/HomeScreen";
 import { useEffect, useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
@@ -33,9 +35,11 @@ export default function App() {
 	<SafeAreaProvider>
       	<NavigationContainer>
 			<SafeAreaView style={{ flex: 1}}>
-				<Stack.Navigator>
-				<Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-				</Stack.Navigator>
+				<Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
 			</SafeAreaView>
       	</NavigationContainer>
     </SafeAreaProvider>

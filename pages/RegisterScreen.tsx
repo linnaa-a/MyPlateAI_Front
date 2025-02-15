@@ -7,6 +7,7 @@ import AuthForm from '../components/AuthForm';
 export default function RegisterScreen({ navigation }: any) {
   const handleRegister = (email: string, password: string) => {
     console.log('mot de passe emila log :', email, password);
+    navigation.navigate('Home');
   };
 
   return (
@@ -18,8 +19,9 @@ export default function RegisterScreen({ navigation }: any) {
         <AuthForm type="register" onSubmit={handleRegister} />
         <View style={styles.bottomContainer}>
           <Text style={styles.bottomText}>Vous avez déjà un compte ?</Text>
-          <Text style={styles.bottomLink} onPress={() => navigation.navigate('LoginScreen')}>
-            Connectez vous !
+          <Text style={styles.bottomLink} onPress={() => navigation.navigate('Login')}
+            >
+            Connectez-vous !
           </Text>
         </View>
       </View>
