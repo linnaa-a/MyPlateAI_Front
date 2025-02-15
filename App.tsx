@@ -17,7 +17,7 @@ export default function App() {
   useEffect(() => {
     async function loadFonts() {
     	await Font.loadAsync({
-    		"Geologica": require("/Users/tom/Documents/Work/MyPlateAI-Front/assets/fonts/geologica.ttf"),
+    		"Geologica": require("./assets/fonts/geologica.ttf"),
       	});
       	setFontsLoaded(true);
     }
