@@ -7,7 +7,6 @@ import FoodSection from '../components/FoodSection';
 import LunchIllustration from "../assets/images/home/lunch-illustration.svg";
 import BreakfastIllustration from "../assets/images/home/breakfast-illustration.svg";
 import DinnerIllustration from "../assets/images/home/dinner-illustration.svg";
-import TabNavigator from '../components/BottomBar';
 
 export default function HomeScreen() {
 
@@ -32,7 +31,6 @@ export default function HomeScreen() {
                 <FoodSection title='Déjeuner' illustration={LunchIllustration} left={true}></FoodSection>
                 <FoodSection title='Dîner' illustration={DinnerIllustration}></FoodSection>
             </View>
-            <TabNavigator />
         </View>
     )
 }

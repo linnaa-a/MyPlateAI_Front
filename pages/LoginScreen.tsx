@@ -18,7 +18,7 @@ export default function LoginScreen({ navigation }: any) {
 
     console.log('Connexion  avec:', email, password);
 
-    navigation.navigate('Home');
+    navigation.navigate('Main');
   };
 
   return (
