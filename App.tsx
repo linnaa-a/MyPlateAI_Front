@@ -8,6 +8,7 @@ import RegisterScreen from "./pages/RegisterScreen";
 import HomeScreen from "./pages/HomeScreen";
 import { useEffect, useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import StackNavigator from "./components/StackNavigator/StackNavigator";
 
 
 const Stack = createNativeStackNavigator();
