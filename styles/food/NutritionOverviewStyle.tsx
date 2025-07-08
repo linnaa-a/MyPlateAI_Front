@@ -14,6 +14,18 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 10
     },
+    "nutrition-goals-container": {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        marginBottom: 40,
+        backgroundColor: colors.white,
+        width: "90%",
+        alignSelf: "center",
+        borderRadius: 20,
+        paddingHorizontal: 15,
+        paddingVertical: 10
+    },
     "nutrition-container": {
         display: "flex",
         flexDirection: "row",

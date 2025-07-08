@@ -1,27 +1,13 @@
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {styles as nutritionstyle} from '../styles/food/NutritionOverviewStyle';
 import {styles, theme} from '../styles/global';
-import { useState } from 'react';
-import { NutritionOverviewProps, NutritionType } from '../types/food/NutritionType';
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import * as Progress from 'react-native-progress'
 
-const NutritionRound = ({title, value, unit, backgroundColor}: NutritionType) => {
-    return (
-        <View style={nutritionstyle["nutrition-round-container"]}>
-            <View style={[nutritionstyle["nutrition-round"], {backgroundColor: backgroundColor} ]}>
-                <Text style={[styles.text, nutritionstyle["nutrition-value"]]}>{value}{unit}</Text>
-            </View>
-            <Text style={[styles.text, nutritionstyle["nutrition-title"]]}>{title}</Text>
-        </View>
-    )
-}
-
 export default function MyObjectivesSection() {
 
-
     return (
-        <View style={nutritionstyle["nutrition-overview"]}>
+        <View style={nutritionstyle["nutrition-goals-container"]}>
             <View style={styles['flex-vertical']}>
                 <View style={{
                     marginTop: 20,
@@ -34,7 +20,7 @@ export default function MyObjectivesSection() {
                         <AnimatedCircularProgress
                             size={100}
                             width={8}
-                            fill={89}
+                            fill={(2000 / 2500) * 100}
                             tintColor={theme.orange}
                             backgroundColor={theme.paleOrange}
                             rotation={0}
@@ -51,15 +37,15 @@ export default function MyObjectivesSection() {
                     <View style={styles.nutrientsContainer}>
                         <View style={{paddingBottom: 5}}>
                             <Text style={styles.text}> Protéines : 15g</Text>
-                            <Progress.Bar progress={0.3} width={120} color={theme.palePink} unfilledColor={theme.paleGrey} borderWidth={0}/>
+                            <Progress.Bar progress={(15 / 100)} width={120} color={theme.palePink} unfilledColor={theme.paleGrey} borderWidth={0}/>
                         </View>
                         <View style={{paddingBottom: 5}}>
                             <Text style={styles.text}> Glucides : 89g</Text>
-                            <Progress.Bar progress={0.7} width={120} color={theme.paleBlue} unfilledColor={theme.paleGrey} borderWidth={0}/>
+                            <Progress.Bar progress={89 / 300} width={120} color={theme.paleBlue} unfilledColor={theme.paleGrey} borderWidth={0}/>
                         </View>
                         <View>
                             <Text style={styles.text}> Fibres : 10g</Text>
-                            <Progress.Bar progress={0.5} width={120} color={theme.paleGreen} unfilledColor={theme.paleGrey} borderWidth={0}/>
+                            <Progress.Bar progress={10 / 50} width={120} color={theme.paleGreen} unfilledColor={theme.paleGrey} borderWidth={0}/>
                         </View>
                     </View>
                 </View>
