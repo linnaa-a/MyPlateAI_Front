@@ -14,7 +14,7 @@ import AuthForm from '../components/AuthForm';
 export default function LoginScreen({ navigation }: any) {
   const handleLogin = (email: string, password: string) => {
     console.log('Connexion  avec:', email, password);
-    navigation.navigate('Home');
+    navigation.navigate('Objectif');
   };
 
   return (
