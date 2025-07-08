@@ -10,10 +10,10 @@ import ObjectifPage from '../../pages/ObjectifsScreen'
 import CameraIconActive from '../../assets/icons/nav/camera-active.svg'
 import CameraIconInactive from '../../assets/icons/nav/camera-inactive.svg'
 import HomeIconInactive from '../../assets/icons/nav/home-inactive.svg'
-import HomeIconActive from '../../assets/icons/nav/home-inactive.svg'
-import ObjectifIconActive from '../../assets/icons/nav/objectifs-inactive.svg'
+import HomeIconActive from '../../assets/icons/nav/home-active.svg'
+import ObjectifIconActive from '../../assets/icons/nav/objectifs-active.svg'
 import ObjectifIconInactive from '../../assets/icons/nav/objectifs-inactive.svg'
-import ProfileIconActive from '../../assets/icons/nav/profil-inactive.svg'
+import ProfileIconActive from '../../assets/icons/nav/profil-active.svg'
 import ProfileIconInactive from '../../assets/icons/nav/profil-inactive.svg'
 
 export type TabParamList = {
@@ -50,7 +50,7 @@ function TabNavigator() {
           component={HomePage}
           options={{
             tabBarIcon: ({ focused, size }) => (
-              !focused ? <HomeIconActive height={size} width={size} /> : <HomeIconInactive height={size} width={size} />
+              focused ? <HomeIconActive height={size} width={size} /> : <HomeIconInactive height={size} width={size} />
             )
           }}
         />
@@ -60,7 +60,7 @@ function TabNavigator() {
           component={CameraPage} 
           options={{
             tabBarIcon: ({ focused, size }) => (
-              !focused ? <CameraIconActive height={size} width={size} /> : <CameraIconInactive height={size} width={size} />
+              focused ? <CameraIconActive height={size} width={size} /> : <CameraIconInactive height={size} width={size} />
             )
           }}
         />
@@ -70,7 +70,7 @@ function TabNavigator() {
             component={ObjectifPage}
             options={{
                 tabBarIcon: ({ focused, size }) => (
-                    !focused ? <ObjectifIconActive height={size} width={size} /> : <ObjectifIconInactive height={size} width={size} />
+                    focused ? <ObjectifIconActive height={size} width={size} /> : <ObjectifIconInactive height={size} width={size} />
                 )
             }}
         />
@@ -80,7 +80,7 @@ function TabNavigator() {
           component={ProfilPage}
           options={{
             tabBarIcon: ({ focused, size }) => (
-              !focused ? <ProfileIconActive height={size} width={size} /> : <ProfileIconInactive height={size} width={size} />
+              focused ? <ProfileIconActive height={size} width={size} /> : <ProfileIconInactive height={size} width={size} />
             )
           }}
         />
