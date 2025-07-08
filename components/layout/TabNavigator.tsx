@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import CameraPage from '../../pages/CameraScreen'
-import ProfilPage from '../../pages/ProfilScreen'
+import ProfilePage from '../../pages/ProfileScreen'
 import HomePage from '../../pages/HomeScreen'
 import ObjectifPage from '../../pages/ObjectifsScreen'
 
@@ -77,7 +77,7 @@ function TabNavigator() {
 
         <Tab.Screen 
           name="Profile"
-          component={ProfilPage}
+          component={ProfilePage}
           options={{
             tabBarIcon: ({ focused, size }) => (
               focused ? <ProfileIconActive height={size} width={size} /> : <ProfileIconInactive height={size} width={size} />
