@@ -11,10 +11,14 @@ import Colors from '../constants/Colors';
 import Logo from '../components/Logo';
 import AuthForm from '../components/AuthForm';
 
+
 export default function LoginScreen({ navigation }: any) {
+
   const handleLogin = (email: string, password: string) => {
+
     console.log('Connexion  avec:', email, password);
-    navigation.navigate('Objectif');
+
+    navigation.navigate('Main');
   };
 
   return (

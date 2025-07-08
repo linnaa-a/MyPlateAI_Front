@@ -7,7 +7,7 @@ import AuthForm from '../components/AuthForm';
 export default function RegisterScreen({ navigation }: any) {
   const handleRegister = (email: string, password: string) => {
     console.log('mot de passe emila log :', email, password);
-    navigation.navigate('Home');
+    navigation.navigate('Main');
   };
 
   return (

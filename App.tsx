@@ -5,10 +5,11 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as Font from 'expo-font';
 import LoginScreen from "./pages/LoginScreen";
 import RegisterScreen from "./pages/RegisterScreen";
-import HomeScreen from "./pages/HomeScreen";
+import TabNavigator from "./components/layout/TabNavigator";
 import ProfileScreen from "./pages/ProfileScreen";
 import { useEffect, useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import StackNavigator from "./components/StackNavigator/StackNavigator";
 import ObjectifsScreen from "./pages/ObjectifsScreen";
 
 
@@ -41,7 +42,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="Objectif" component={ObjectifsScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
 			</SafeAreaView>

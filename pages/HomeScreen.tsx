@@ -21,7 +21,7 @@ export default function HomeScreen() {
     ])
 
     return (
-        <ScrollView style={styles.mainContainer}>
+        <View style={styles.mainContainer}>
             <CalendarComponent onDatePress={(date) => setSelectedDate(date)} selectedDate={selectedDate}/>
             <View>
                 <NutritionOverview nutrition={nutrition}/>
@@ -31,7 +31,7 @@ export default function HomeScreen() {
                 <FoodSection title='Déjeuner' illustration={LunchIllustration} left={true}></FoodSection>
                 <FoodSection title='Dîner' illustration={DinnerIllustration}></FoodSection>
             </View>
-        </ScrollView>
+        </View>
     )
 }
 
