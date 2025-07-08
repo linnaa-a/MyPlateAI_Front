@@ -9,6 +9,7 @@ import HomeScreen from "./pages/HomeScreen";
 import ProfileScreen from "./pages/ProfileScreen";
 import { useEffect, useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import ObjectifsScreen from "./pages/ObjectifsScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -41,6 +42,7 @@ export default function App() {
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Objectif" component={ObjectifsScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
 			</SafeAreaView>
       	</NavigationContainer>

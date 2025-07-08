@@ -1,0 +1,163 @@
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {styles as nutritionstyle} from '../styles/food/NutritionOverviewStyle';
+import {styles, theme} from '../styles/global';
+import { useState } from 'react';
+import { NutritionOverviewProps, NutritionType } from '../types/food/NutritionType';
+import { AnimatedCircularProgress } from 'react-native-circular-progress'
+import * as Progress from 'react-native-progress'
+
+const NutritionRound = ({title, value, unit, backgroundColor}: NutritionType) => {
+    return (
+        <View style={nutritionstyle["nutrition-round-container"]}>
+            <View style={[nutritionstyle["nutrition-round"], {backgroundColor: backgroundColor} ]}>
+                <Text style={[styles.text, nutritionstyle["nutrition-value"]]}>{value}{unit}</Text>
+            </View>
+            <Text style={[styles.text, nutritionstyle["nutrition-title"]]}>{title}</Text>
+        </View>
+    )
+}
+
+export default function MyObjectivesSection() {
+
+
+    return (
+        <View style={nutritionstyle["nutrition-overview"]}>
+            <View style={styles['flex-vertical']}>
+                <View style={{
+                    marginTop: 20,
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                    alignItems: "center"
+                }}>
+                    <View>
+                        <AnimatedCircularProgress
+                            size={100}
+                            width={8}
+                            fill={89}
+                            tintColor={theme.orange}
+                            backgroundColor={theme.paleOrange}
+                            rotation={0}
+                        >
+                            {
+                                () => (
+                                    <Text style={styles.text}>
+                                    2000Kcal
+                                    </Text>
+                                )
+                            }
+                        </AnimatedCircularProgress>
+                    </View>
+                    <View style={styles.nutrientsContainer}>
+                        <View style={{paddingBottom: 5}}>
+                            <Text style={styles.text}> Protéines : 15g</Text>
+                            <Progress.Bar progress={0.3} width={120} color={theme.palePink} unfilledColor={theme.paleGrey} borderWidth={0}/>
+                        </View>
+                        <View style={{paddingBottom: 5}}>
+                            <Text style={styles.text}> Glucides : 89g</Text>
+                            <Progress.Bar progress={0.7} width={120} color={theme.paleBlue} unfilledColor={theme.paleGrey} borderWidth={0}/>
+                        </View>
+                        <View>
+                            <Text style={styles.text}> Fibres : 10g</Text>
+                            <Progress.Bar progress={0.5} width={120} color={theme.paleGreen} unfilledColor={theme.paleGrey} borderWidth={0}/>
+                        </View>
+                    </View>
+                </View>
+                <View style={{marginTop: 25}}>
+                    <Text style={{
+                        fontSize: 16,
+                        fontFamily: "Geologica",
+                        fontWeight: 500
+                    }}>
+                        Mes objectifs actuels
+                    </Text>
+                </View>
+                <View style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                    <View style={{display: "flex", flexDirection: "column"}}>
+                        <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Kcal/jour :</Text>
+                            <TextInput style={{
+                                backgroundColor: theme.paleGrey,
+                                height: 20,
+                                width: 40,
+                                borderRadius: 10,
+                                marginLeft: 5,
+                                textAlign: "center",
+                                fontSize: 12,
+                                fontFamily: "Geologica"
+                            }}> 
+                                2000
+                            </TextInput>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>kcal</Text>
+                        </View>
+                        <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Glucides/jour :</Text>
+                            <TextInput style={{
+                                backgroundColor: theme.paleGrey,
+                                height: 20,
+                                width: 40,
+                                borderRadius: 10,
+                                marginLeft: 5,
+                                textAlign: "center",
+                                fontSize: 12,
+                                fontFamily: "Geologica"
+                            }}> 
+                                300
+                            </TextInput>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>g</Text>
+                        </View>
+                    </View>
+                    <View style={{display: "flex", flexDirection: "column"}}>
+                        <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Protéines/jour :</Text>
+                            <TextInput style={{
+                                backgroundColor: theme.paleGrey,
+                                height: 20,
+                                width: 40,
+                                borderRadius: 10,
+                                marginLeft: 5,
+                                textAlign: "center",
+                                fontSize: 12,
+                                fontFamily: "Geologica"
+                            }}> 
+                                100
+                            </TextInput>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>g</Text>
+                        </View>
+                        <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Fibres/jour :</Text>
+                            <TextInput style={{
+                                backgroundColor: theme.paleGrey,
+                                height: 20,
+                                width: 40,
+                                borderRadius: 10,
+                                marginLeft: 5,
+                                textAlign: "center",
+                                fontSize: 12,
+                                fontFamily: "Geologica"
+                            }}> 
+                                50
+                            </TextInput>
+                            <Text style={{fontSize: 12, fontFamily: "Geologica"}}>g</Text>
+                        </View>
+                    </View>
+                </View>
+                <View style={{margin: "auto", marginTop: 40, marginBottom: 15}}>
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor: theme.greenBlue,
+                            width: 100,
+                            height: 30,
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: 20
+                        }}
+                        onPress={() => {}}
+                        >
+                        <Text style={{fontFamily: "Geologica", color: theme.white}}>Enregistrer</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </View>
+    )
+}
