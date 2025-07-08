@@ -3,6 +3,7 @@ import {useState} from "react";
 import CalendarComponent from "../components/CalendarComponent";
 import Colors from "../constants/Colors";
 import NutritionOverview from "../components/NutritionOverview";
+import MyObjectivesSection from "../components/MyObjectivesSection";
 import {styles as globalstyle} from "../styles/global";
 
 
@@ -30,6 +31,7 @@ export default function ObjectifsScreen(props: any) {
 
             <View>
                 <NutritionOverview nutrition={nutrition}/>
+                <MyObjectivesSection></MyObjectivesSection>
             </View>
         </ScrollView>
     )
