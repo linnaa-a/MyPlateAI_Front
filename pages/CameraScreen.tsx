@@ -1,34 +1,45 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
-import Colors from '../constants/Colors'
+import { Text, View, StyleSheet, ScrollView } from 'react-native'
+import { styles as globalStyle, theme } from '../styles/global'
+import CameraHandler from '../components/CameraHandler/CameraHandler'
 
 function CameraScreen() {
-
   return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Caméra</Text>
-        <Text style={styles.subtitle}>Scannez vos aliments</Text>
+    <ScrollView style={styles.mainContainer}>
+      <Text style={[globalStyle.text, styles.title]}>Caméra</Text>
+      <Text style={[globalStyle.text, styles.subtitle]}>Scannez vos aliments</Text>
+      
+      <View style={styles.cameraContainer}>
+        <CameraHandler />
       </View>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.background,
+    backgroundColor: theme.cream,
   },
   title: {
-    fontSize: 24,
-    fontFamily: 'Geologica',
+    fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 20,
     marginBottom: 10,
+    color: theme.black,
   },
   subtitle: {
     fontSize: 16,
-    fontFamily: 'Geologica',
-    color: Colors.darkgrey,
+    textAlign: 'center',
+    marginBottom: 20,
+    color: theme.grey,
+  },
+  cameraContainer: {
+    flex: 1,
+    minHeight: 500,
+    marginHorizontal: 20,
+    marginBottom: 20,
   },
 })
 
