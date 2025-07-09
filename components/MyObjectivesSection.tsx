@@ -62,68 +62,72 @@ export default function MyObjectivesSection() {
                     <View style={{display: "flex", flexDirection: "column"}}>
                         <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Kcal/jour :</Text>
-                            <TextInput style={{
-                                backgroundColor: theme.paleGrey,
-                                height: 20,
-                                width: 40,
-                                borderRadius: 10,
-                                marginLeft: 5,
-                                textAlign: "center",
-                                fontSize: 12,
-                                fontFamily: "Geologica"
-                            }}> 
-                                2000
-                            </TextInput>
+                            <TextInput
+                                style={{
+                                    backgroundColor: theme.paleGrey,
+                                    height: 20,
+                                    width: 40,
+                                    borderRadius: 10,
+                                    marginLeft: 5,
+                                    textAlign: "center",
+                                    fontSize: 12,
+                                    fontFamily: "Geologica"
+                                }}
+                                defaultValue="2000"
+                            />
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>kcal</Text>
                         </View>
                         <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Glucides/jour :</Text>
-                            <TextInput style={{
-                                backgroundColor: theme.paleGrey,
-                                height: 20,
-                                width: 40,
-                                borderRadius: 10,
-                                marginLeft: 5,
-                                textAlign: "center",
-                                fontSize: 12,
-                                fontFamily: "Geologica"
-                            }}> 
-                                300
-                            </TextInput>
+                            <TextInput
+                                style={{
+                                    backgroundColor: theme.paleGrey,
+                                    height: 20,
+                                    width: 40,
+                                    borderRadius: 10,
+                                    marginLeft: 5,
+                                    textAlign: "center",
+                                    fontSize: 12,
+                                    fontFamily: "Geologica"
+                                }}
+                                defaultValue="300"
+                            />
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>g</Text>
                         </View>
                     </View>
                     <View style={{display: "flex", flexDirection: "column"}}>
                         <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Protéines/jour :</Text>
-                            <TextInput style={{
-                                backgroundColor: theme.paleGrey,
-                                height: 20,
-                                width: 40,
-                                borderRadius: 10,
-                                marginLeft: 5,
-                                textAlign: "center",
-                                fontSize: 12,
-                                fontFamily: "Geologica"
-                            }}> 
-                                100
-                            </TextInput>
+                            <TextInput
+                                style={{
+                                    backgroundColor: theme.paleGrey,
+                                    height: 20,
+                                    width: 40,
+                                    borderRadius: 10,
+                                    marginLeft: 5,
+                                    textAlign: "center",
+                                    fontSize: 12,
+                                    fontFamily: "Geologica"
+                                }}
+                                defaultValue="100"
+                            />
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>g</Text>
                         </View>
                         <View style={{marginTop: 25, display: "flex", flexDirection: "row"}}>
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>Fibres/jour :</Text>
-                            <TextInput style={{
-                                backgroundColor: theme.paleGrey,
-                                height: 20,
-                                width: 40,
-                                borderRadius: 10,
-                                marginLeft: 5,
-                                textAlign: "center",
-                                fontSize: 12,
-                                fontFamily: "Geologica"
-                            }}> 
-                                50
-                            </TextInput>
+                            <TextInput
+                                style={{
+                                    backgroundColor: theme.paleGrey,
+                                    height: 20,
+                                    width: 40,
+                                    borderRadius: 10,
+                                    marginLeft: 5,
+                                    textAlign: "center",
+                                    fontSize: 12,
+                                    fontFamily: "Geologica"
+                                }}
+                                defaultValue="50"
+                            />
                             <Text style={{fontSize: 12, fontFamily: "Geologica"}}>g</Text>
                         </View>
                     </View>
